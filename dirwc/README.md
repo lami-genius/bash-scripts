@@ -26,4 +26,4 @@ Default of **OUTPUTFILE** is **dftoutput.dirwc** in current directory
 **49652** is total number of **characters** in all the files in DIRPATH <br>
 
 **Last Modified:**
-27th of Sept 2021 at 9h21 [GMT + 2]
+27th of Sept 2021 at 9h59 [GMT + 2]
