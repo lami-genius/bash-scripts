@@ -15,5 +15,14 @@ argument.
 **Usage**<br>
 dirwc [DIRPATH] [OUTPUTFILE]
 
+**View of Ouput File**<br>
+[DIRPATH]<br>
+1952  5207 49652<br>
+
+**Explanation of Output File**<br>
+**1952** is total number of **lines** in all the files in DIRPATH <br>
+**5207** is total number of **words** in all the files in DIRPATH <br>
+**49652** is total number of **characters** in all the files in DIRPATH <br>
+
 **Last Modified:**
 27th of Sept 2021 at 9h21 [GMT + 2]
