@@ -60,7 +60,7 @@ fi
 touch $OUTPUT
 
 # printing a file header
-echo $DIRWC >> $OUTPUT
+echo -n "$DIRWC " >> $OUTPUT
 
 # appending word count to output file
 wc $(find $DIRWC -name '*.*' -type f) | tail -1 | rev | cut -d ' ' -f 2-5 | rev >> $OUTPUT
