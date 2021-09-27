@@ -13,7 +13,7 @@ file passed as the second argument with dftoutput.dirwc as the default in case o
 argument.
 
 **Usage**<br>
-dirwc [DIRPATH] [OUTPUTFILE]<br>
+dirwc [DIRPATH] [OUTPUTFILE]<br> <br>
 Default of **DIRPATH** is **current directory**<br>
 Default of **OUTPUTFILE** is **dftoutput.dirwc** in current directory
 
