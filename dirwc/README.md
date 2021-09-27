@@ -13,11 +13,12 @@ file passed as the second argument with dftoutput.dirwc as the default in case o
 argument.
 
 **Usage**<br>
-dirwc [DIRPATH] [OUTPUTFILE]
+dirwc [DIRPATH] [OUTPUTFILE]<br>
+Default of **DIRPATH** is **current directory**<br>
+Default of **OUTPUTFILE** is **dftoutput.dirwc** in current directory
 
 **View of Ouput File**<br>
-[DIRPATH]<br>
-1952  5207 49652<br>
+[DIRPATH] 1952  5207 49652<br>
 
 **Explanation of Output File**<br>
 **1952** is total number of **lines** in all the files in DIRPATH <br>
