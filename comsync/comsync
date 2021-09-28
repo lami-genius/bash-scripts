@@ -1,0 +1,55 @@
+#!/bin/bash
+
+: '
+**Author** Fonyuy Boris Lami
+
+**Occupation** Data Scientist and Software Developer
+
+**School** Carnegie Mellon University
+
+**Description of dirwc**
+comsync comments out synchronized from methods and code blocks.
+A key assumption here is that the code is well formatted.
+
+**Usage**
+comsyn JAVASOURCECODEFILEPATH
+
+**Last Modified**
+28th of Sept 2021 at 20h20 [GMT + 2]
+
+ '
+ 
+ # At most 1 args
+if [[ "$#" -eq 0 ]] || [[ "$#" -eq 1 ]]
+then
+	if [ "$#" -eq 0 ]
+	then
+	    echo -e "No directory. Using default current project directory ./src \n"
+	    DIRSRC=./src
+	elif [[ "$#" -eq 1 ]] && [[ -d $1 ]]
+	then
+	    echo -e "Using source code project $1\n"
+	    DIRSRC=$1
+	fi
+else
+   echo -e "...ending comsync ... at most 1 arg required\n\nUsage\n comsync JAVASOURCECODEFILEPATH"
+   exit 1
+fi
+
+# Comment out any synchronized from block
+gawk -i inplace  '{if($1~"synchronized") {$1="      //synchronized"} print $0}' $(find $DIRSRC -name '*.*' -type f) 
+
+# Successful comment synchronized block
+if [ "$?" -eq 0 ]
+then
+    echo -e "******* Comment all Synchronized Blocks Complete in $DIRSRC ******\n"
+fi 
+
+# Comment out any synchronized from method
+sed -i 's/ synchronized / \/*synchronized*\/ /g' $(find $DIRSRC -name '*.*' -type f) 
+
+# Successful comment synchronized methods
+if [ "$?" -eq 0 ]
+then
+    echo -e "******* Comment all Synchronized Methods Complete in $DIRSRC ******\n"
+fi 
