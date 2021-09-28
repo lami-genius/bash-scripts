@@ -14,4 +14,4 @@ Script | Brief Explanation
 [dirwc](https://github.com/lami-genius/bash-scripts/tree/main/dirwc) | project code summary in number of lines, words and characters
 [comsync](https://github.com/lami-genius/bash-scripts/tree/main/comsync) | comment out all synchronized methods and code blocks
 [uncomsync](https://github.com/lami-genius/bash-scripts/tree/main/uncomsync) | uncomment out all synchronized methods and code blocks
-[jcrn](https://github.com/lami-genius/bash-scripts/tree/main/jcrn) | jcrn compiles build.xml and runs main class n times
+[jcrn](https://github.com/lami-genius/bash-scripts/tree/main/jcrn) | compiles build.xml and runs main class n times
