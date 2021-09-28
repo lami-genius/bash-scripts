@@ -1,0 +1,52 @@
+#!/bin/bash
+
+: '
+**Author** Fonyuy Boris Lami
+
+**Occupation** Data Scientist and Software Developer
+
+**School** Carnegie Mellon University
+
+**Description of dirwc**
+jcrn compiles and runs JAVAMAINFILETESTFILE NUMBEROFRUNS times. In a case where NUMBEROFRUNS is not specified, 
+the code runs ones.
+
+**Usage**
+jcrn -f JAVAMAINFILETESTFILE -n NUMBEROFRUNS 
+
+**Recommended Usage**
+jcrn -f JAVAMAINFILETESTFILE -n NUMBEROFRUNS > output.txt
+
+**Last Modified**
+28th of Sept 2021 at 20h35 [GMT + 2]
+
+ '
+
+# Compile build.xml using ant
+ant
+
+# Successful Build finish
+if [ "$?" -eq 0 ]
+then
+    echo -e "******* Build complete ******"
+fi
+
+# Get to Bin directory
+cd bin
+
+# Main driver and number of runs
+while getopts f:n: option
+	do
+		case "${option}" in 
+		n) NUMEXEC=${OPTARG};;
+		f) JAVATESTFILE=${OPTARG};;
+	esac
+done
+
+# Running the code n times
+for (( i=1; i<=$NUMEXEC; i++ ))
+do  
+   echo -e "#####***** run number $i ****#####\n"
+   java $JAVATESTFILE 
+done
+
