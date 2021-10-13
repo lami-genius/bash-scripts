@@ -7,23 +7,20 @@ MSIT Class of 2022 student at [**Carnegie Mellon University Africa**](https://ww
 [**LinkedIn**](https://www.linkedin.com/in/borislami/)
 
 **Description of dirwc**<br>
-dirwc does a word count of files in a given directory passed as first argument with the
-current direcotry as the default in case of no first argument passed and saves the
-file passed as the second argument with dftoutput.dirwc as the default in case of no second
-argument.
+dirwc does a line count, word count and character count of files in a given directory passed as an argument with the
+current directory as default if no argument is parsed and prints line count, word count and character count to the screen
 
 **Usage**<br>
-dirwc [DIRPATH] [OUTPUTFILE]<br> <br>
+dirwc [DIRPATH]<br> <br>
 Default of **DIRPATH** is **current directory**<br>
-Default of **OUTPUTFILE** is **dftoutput.dirwc** in current directory
 
-**View of Ouput File**<br>
+**Output in terminal**<br>
 [DIRPATH] 1952  5207 49652<br>
 
-**Explanation of Output File**<br>
+**Explanation of the output**<br>
 **1952** is total number of **lines** in all the files in DIRPATH <br>
 **5207** is total number of **words** in all the files in DIRPATH <br>
 **49652** is total number of **characters** in all the files in DIRPATH <br>
 
 **Last Modified:**
-13th of October 2021 at 12h14 [GMT + 2]
+13th of October 2021 at 12h26 [GMT + 2]
