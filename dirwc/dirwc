@@ -8,65 +8,38 @@
 **School** Carnegie Mellon University
 
 **Description of dirwc**
-dirwc does a word count of files in a given directory passed as first argument with the
-current direcotry as the default in case of no first argument passed and saves the
-file passed as the second argument with dftoutput.dirwc as the default in case of no second
-argument.
+dirwc does a word count of files in a given directory passed as one argument with the
+current directory and prints results to screen
 
 **Usage**
-dirwc [DIRPATH] [OUTPUTFILE]
+dirwc [DIRPATH] 
 
 **Last Modified**
-27th of Sept 2021 at 9h59 [GMT + 2]
+13th of October 2021 at 12h14 [GMT + 2]
  '
 
 # At most 2 args
-if [[ "$#" -eq 0 ]] || [[ "$#" -eq 1 ]] || [[ "$#" -eq 2 ]]
+if [[ "$#" -gt 1 ]] 
 then
+   	echo -e "...ending dirwc ... at most 1 args required\n\nUsage\n dirwc [DIRPATH]"
+   	exit 1
+else
 	if [ "$#" -eq 0 ]
 	then
-	    echo -e "No directory. Using default current directory\nDefault output filename is dftoutput.dirwc"
+	    echo -e "No directory. Using default current directory\n\nUsage\n dirwc [DIRPATH]"
 	    DIRWC=./
-	    OUTPUT="dftoutput.dirwc"
 	elif [[ "$#" -eq 1 ]] && [[ -d $1 ]]
 	then
-	    echo -e "No output file name\nDefault output filename is dftoutput.dirwc"
 	    DIRWC=$1
-	    OUTPUT="dftoutput.dirwc"
-	elif [[ "$#" -eq 1 ]] && [[ -f $1 ]]
-	then
-	    echo -e "No directory. Using default current directory"
-	    DIRWC=./
-	    OUTPUT=$1
-	elif [[ -d $1 ]] && [[ -f $2 ]]
-	then
-	    DIRWC=$1
-	    OUTPUT=$2 
-	elif [[ -d $2 ]] && [[ -f $1 ]]
-	then
-	    DIRWC=$2
-	    OUTPUT=$1 
-	elif [[ "$#" -eq 2 ]] && [[ -d $1 ]]
-	then
-	    DIRWC=$1
-	    OUTPUT=$2 
 	fi
-else
-   echo -e "...ending dirwc ... at most 2 args required\n\nUsage\n dirwc [DIRPATH] [OUTPUTFILE]"
-   exit 1
 fi
 
-# create file in current directory
-touch $OUTPUT
 
-# printing a file header
-echo -n "$DIRWC " >> $OUTPUT
-
-# appending word count to output file
-wc $(find $DIRWC -name '*.*' -type f) | tail -1 | rev | cut -d ' ' -f 2-5 | rev >> $OUTPUT
+# Output results to screen
+echo $DIRWC"  "`wc $(find $DIRWC -name '*.*' -type f) | tail -1 | rev | cut -d ' ' -f 2-5 | rev`
 
 # finish
-if [ "$?" -eq 0 ]
+if [ "$?" -ne 0 ]
 then
-    echo -e "******* dirwc ran successfully ****** \nFor any bugs, contact author: Fonyuy Boris Lami (lami-genius on github) \n See results output in $OUTPUT"
+    echo -e "An error occured! contact author: Fonyuy Boris Lami (lami-genius on github)\n"
 fi
