@@ -8,8 +8,8 @@
 **School** Carnegie Mellon University
 
 **Description of dirwc**
-dirwc does a word count of files in a given directory passed as one argument with the
-current directory and prints results to screen
+dirwc does a line count, word count and character count of files in a given directory passed as an argument with the
+current directory as default if no argument is parsed and prints line count, word count and character count to the screen
 
 **Usage**
 dirwc [DIRPATH] 
